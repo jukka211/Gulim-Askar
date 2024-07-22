@@ -1,0 +1,176 @@
+@font-face {
+    font-family:Beth-Ellen;
+    src: url("Beth-Ellen-2.0.otf");
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;  /* Width of the scrollbar */
+}
+
+
+::-webkit-scrollbar-track {
+    background: #000000;  /* Color of the track */
+   
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #ffffff;  /* Color of the scrollbar handle */
+   
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: #ffffff;
+    
+    cursor: url('1-02.svg') 128 128, auto;
+}
+a, .custom-cursor {
+    cursor: url('1-01.svg') 128 128, auto;
+}
+
+.top, .bottom {
+    font-family:Beth-Ellen;
+    font-size: 20px;
+    line-height: 20px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 999;
+}
+
+.top {
+    top:14px;
+}
+.bottom {
+    bottom:14px;
+    display: inline-block;
+}
+.about, .what, .shop {
+    display: inline-block;
+    margin-right: 40px;
+}
+
+
+.bottom a:hover {
+    text-decoration: none;
+ 
+   
+  }
+  .bottom a {
+    font-family:Beth-Ellen;
+  }
+  .what:hover {
+ rotate: -7deg;
+
+  }
+  .about:hover {
+ rotate: 7deg;
+  }
+  .shop:hover {
+ rotate: -7deg;
+  }
+  .what, .about, .shop {
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+  }
+a {
+    text-decoration: none;
+    color:black;
+}
+
+    
+
+
+
+/* Reset CSS */
+* {
+	margin: 0;
+	padding: 0;
+	
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+/* Main CSS */
+.grid-wrapper > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    /* Removed min-height: 0; */
+}
+.grid-wrapper > div > img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(16%, 1fr));
+    grid-auto-rows: auto; /* Let rows adjust height automatically */
+    grid-auto-flow: dense;
+}
+.grid-wrapper .wide {
+	grid-column: span 2;
+   
+    
+    
+}
+.grid-wrapper .tall {
+	grid-row: span 2;
+    
+    
+}
+.grid-wrapper .big {
+	grid-column: span 2;
+	grid-row: span 2;
+    
+    
+    
+}
+
+img:hover{
+    scale: 1.6;
+    transition: all 300ms ease-in-out;
+    transform: rotate(-7deg);
+}
+
+img{
+    mix-blend-mode: multiply;
+    transition: all 300ms ease-in-out;
+
+    transition: all 600ms ease-in-out;
+}
+
+.scaled-down {
+    transform: scale(1) rotate(0deg);
+}
+
+
+
+@media screen and (min-width: 100px) and (max-width: 640px) {
+    .grid-wrapper {
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+        grid-auto-rows: auto; /* Let rows adjust height automatically */
+        grid-auto-flow: dense;
+    }
+}
