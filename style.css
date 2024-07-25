@@ -36,6 +36,9 @@ html, body {
 a, .custom-cursor {
     cursor: url('1-01.png'), url('1-01.cur')  32 32, auto;
 }
+a img, .custom-cursor {
+    cursor: url('1-01.png'), url('1-01.cur')  32 32, auto;
+}
 
 .top, .bottom {
     font-family:Beth-Ellen;
