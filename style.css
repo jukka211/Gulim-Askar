@@ -31,10 +31,10 @@ html, body {
     overflow-x: hidden;
     background-color: #ffffff;
     
-    cursor: url('1-02.svg') 128 128, auto;
+    cursor: url('1-02.cur'), url('1-02.svg') 32 32, auto;
 }
 a, .custom-cursor {
-    cursor: url('1-01.svg') 128 128, auto;
+    cursor: url('1-01.cur'), url('1-01.svg') 32 32, auto;
 }
 
 .top, .bottom {
