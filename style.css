@@ -63,7 +63,9 @@ a, .custom-cursor {
 .bottom a:hover {
     text-decoration: none;
  
-   
+.bottom img:hover {
+    scale:1.2;
+}   
   }
   .bottom a {
     font-family:Beth-Ellen;
