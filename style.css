@@ -149,7 +149,7 @@ img {
 }
 
 img:hover{
-    scale: 1.6;
+    scale: 1.4;
     transition: all 300ms ease-in-out;
     transform: rotate(-7deg);
 }
