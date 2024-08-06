@@ -59,7 +59,12 @@ a img, .custom-cursor {
 }
 .about, .what, .shop {
     display: inline-block;
-    margin-right: 40px;
+    
+    padding:5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+ 
 }
 
 
@@ -178,4 +183,5 @@ img{
         grid-auto-rows: auto; /* Let rows adjust height automatically */
         grid-auto-flow: dense;
     }
+	.
 }
