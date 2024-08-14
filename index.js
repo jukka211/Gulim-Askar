@@ -1,9 +1,9 @@
 let displayDistance = 200; // Default distance in px to display another photo
-let nDisplay = 15; // Default number of pictures to display at once
+let nDisplay = 10; // Default number of pictures to display at once
 
 // Check if the screen width is 768px or less
 if (window.innerWidth <= 768) {
-    nDisplay = 4; // Number of pictures to display at once on mobile
+    nDisplay = 6; // Number of pictures to display at once on mobile
 }
 
 // Function to update displayDistance based on screen size
