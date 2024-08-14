@@ -10,7 +10,7 @@ let lastMousePosition = {x: 0, y: 0}; // used to get the last mouse/touch positi
 function activatePic(img, x, y) {
     // Reset the scale of all images
     for (let i = 0; i < images.length; i++) {
-        images[i].style.transform = "translate(-50%, -50%) scale(0.4)";
+        images[i].style.transform = "translate(-50%, -50%) scale(0.6)";
     }
 
     // Activate the current image and scale it up
