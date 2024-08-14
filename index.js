@@ -4,6 +4,7 @@ let nDisplay = 10; // Default number of pictures to display at once
 // Check if the screen width is 768px or less
 if (window.innerWidth <= 768) {
     nDisplay = 6; // Number of pictures to display at once on mobile
+    displayDistance = 100;
 }
 
 // Function to update displayDistance based on screen size
