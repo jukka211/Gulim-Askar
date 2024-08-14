@@ -176,7 +176,7 @@ a {
         rotate: 0deg; /* Remove rotation on hover for better mobile experience */
     }
    .bottom {
-    transform: scale(1);
+    transform: scale(0.9);
    }
     a {
         cursor: default; /* Disable custom cursor for mobile */
@@ -295,5 +295,38 @@ a {
 	<div class="about"><a href="https://gulimaskar.com/about-page/about-page.html" ><img style="width:120px;" src="about.svg" alt=""/></a></div>
 	<div class="shop"><a href="https://www.instagram.com/gulim.art/" ><img style="width:65px;"  src="shop.svg" alt=""/></a></div>
     </div>
+
+	<script>
+        // Function to detect if the user is on a mobile device
+        function isMobileDevice() {
+            return /Mobi|Android/i.test(navigator.userAgent);
+        }
+
+        // Function to handle clicks on the links
+        function handleClick(event) {
+            if (isMobileDevice()) {
+                const link = event.currentTarget;
+                if (link.dataset.clicked === "true") {
+                    // Reset clicked status and allow the link to open
+                    link.dataset.clicked = "false";
+                } else {
+                    // Prevent the default action (prevent opening link on first click)
+                    event.preventDefault();
+                    // Set clicked status
+                    link.dataset.clicked = "true";
+                    // Optional: Reset the clicked status after a timeout (e.g., 2 seconds)
+                    setTimeout(() => {
+                        link.dataset.clicked = "false";
+                    }, 2000);
+                }
+            }
+        }
+
+        // Attach the click event listener to each <a> tag
+        document.querySelectorAll('a').forEach(link => {
+            link.dataset.clicked = "false"; // Initialize clicked status
+            link.addEventListener('click', handleClick);
+        });
+    </script>
 </body>
 </html>
