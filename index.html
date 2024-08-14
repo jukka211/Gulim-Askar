@@ -1,193 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trailing photos!</title>
+    
+    <script src="index.js"></script>
+    <style>
+        @font-face {
+    font-family:Beth-Ellen;
+    src: url("Beth-Ellen-2.0.otf");
+  }
+  body {
+    touch-action: none;
+    overflow: hidden;
+}
+
+/* Alternatively, disable touch actions on specific elements */
+.image, .top, .bottom {
+    touch-action: none;
+}
+
+
+        body {
+    background-color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    min-height: 100vh;
+    cursor: url('1-02.png'), url('1-02.png') 32 32, auto;
+}
+
+
+
+.image {
+    width: 50vmin;
+    position: absolute;
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gulim Askar</title>
-  <link rel="stylesheet" href="style.css">
-  <link id="dynamic-favicon" rel="icon" href="images/favicon-1.svg" type="image/svg+xml" >
-    <script>
-        let faviconFrames = [
-            'images/favicon-1.svg',
-            'images/favicon-2.svg',
-			'images/favicon-1.svg',
-            'images/favicon-2.svg'
-        ];
-        let currentFrame = 0;
-        
-		function animateFavicon() {
-            const favicon = document.getElementById('dynamic-favicon');
-            // Add a cache-busting query parameter
-            favicon.href = faviconFrames[currentFrame] + '?v=' + new Date().getTime();
-            currentFrame = (currentFrame + 1) % faviconFrames.length;
-            setTimeout(animateFavicon, 500); // Adjust the timeout for animation speed (500ms = 0.5s)
-        }
-        
-        window.onload = animateFavicon;
-    </script>
+    transform: translate(-50%, -50%) scale(0.3);
  
+   
+}
+
+.image[data-status="inactive"] {
+    display: none;
+    
+}
+
+.image[data-status="active"] {
+    display: block;
+    
+}
+
+img {
+    mix-blend-mode:multiply;
+}
+
+
+
+.top, .bottom {
+    font-family:Beth-Ellen;
+    font-size: 20px;
+    line-height: 20px;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 999;
+    cursor: url('1-01.svg')32 32, auto;
+}
+.gulim {
+    user-select: none;
+}
+.top {
+    top:14px;
+    user-select: none;
+}
+.bottom {
+    bottom:14px;
+    display: inline-block;
+}
+.about, .what, .shop {
+    display: inline-block;
+    
+    padding:5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+ 
+}
+
+.bottom img:hover {
+    scale:1.2;
+}
+
+.bottom a:hover {
+    text-decoration: none;
+ 
+   
+  }
+  .bottom a {
+    font-family:Beth-Ellen;
+  }
+  .what:hover {
+ rotate: -7deg;
+
+  }
+  .about:hover {
+ rotate: 7deg;
+  }
+  .shop:hover {
+ rotate: -7deg;
+  }
+  .what, .about, .shop {
+    transition: all 200ms ease-in-out;
+    cursor: url('1-01.svg')32 32, auto;
+
+  }
+a {
+    user-select: none;
+    text-decoration: none;
+    color:black;
+    cursor: url('1-01.png')32 32, auto;
+}
+
+
+
+@media (max-width: 768px) {
+    body {
+        cursor: default; /* Disable custom cursor for mobile */
+    }
+
+    .image {
+        width: 60vmin; /* Increase image size for better visibility on mobile */
+        transform: translate(-50%, -50%) scale(0.5); /* Adjust scale */
+    }
+
+    .bottom img:hover, .what:hover, .about:hover, .shop:hover {
+        scale: 1.1; /* Slightly reduce hover scaling */
+        rotate: 0deg; /* Remove rotation on hover for better mobile experience */
+    }
+   .bottom {
+    transform: scale(1);
+   }
+    a {
+        cursor: default; /* Disable custom cursor for mobile */
+    }
+}
+    </style>
 </head>
-
 <body>
+    <a href="project-01/project-page-01.html">
+        <img src="images/img14.jpg" data-index="0" data-status="inactive" class="image">
+    </a>
+    <a href="project-01/project-page-01.html">
+        <img src="images/img28.jpg" data-index="1" data-status="inactive" class="image">
+    </a>
+    <a href="project-01/project-page-01.html">
+        <img src="images/img.gif" data-index="2" data-status="inactive" class="image">
+    </a>
+    <a href="project-05/project-page-05.html">
+        <img src="images/img133.png" data-index="3" data-status="inactive" class="image">
+    </a>
+    <a href="project-01/project-page-01.html">
+        <img src="images/img05.gif" data-index="4" data-status="inactive" class="image">
+    </a>
+    <a href="project-03/project-page-03.html">
+        <img src="images/img555.jpg" data-index="5" data-status="inactive" class="image">
+    </a>
+    <a href="project-04/project-page-04.html">
+        <img src="images/img04.gif" data-index="6" data-status="inactive" class="image">
+    </a>
+    <a href="project-02/project-page-02.html">
+        <img src="images/img345.jpg" data-index="7" data-status="inactive" class="image">
+    </a>
+    <a href="project-04/project-page-04.html">
+        <img src="images/img0.gif" data-index="8" data-status="inactive" class="image">
+    </a>
+    <a href="project-04/project-page-04.html">
+        <img src="images/img67.jpg" data-index="9" data-status="inactive" class="image">
+    </a>
+    <a href="project-07/project-page-07.html">
+        <img src="images/img129.jpg" data-index="10" data-status="inactive" class="image">
+    </a>
+    <a href="project-01/project-page-01.html">
+        <img src="images/img5.jpg" data-index="11" data-status="inactive" class="image">
+    </a>
+    <a href="project-04/project-page-04.html">
+        <img src="images/img02.gif" data-index="12" data-status="inactive" class="image">
+    </a>
+    <a href="project-01/project-page-01.html">
+        <img src="images/img104.jpg" data-index="13" data-status="inactive" class="image">
+    </a>
+    <a href="project-05/project-page-05.html">
+        <img src="images/img456.png" data-index="14" data-status="inactive" class="image">
+    </a>
+    <a href="project-04/project-page-04.html">
+        <img src="images/img03.gif" data-index="15" data-status="inactive" class="image">
+    </a>
+    <a href="project-06/project-page-06.html">
+        <img src="images/img10.png" data-index="16" data-status="inactive" class="image">
+    </a>
+    <a href="project-02/project-page-02.html">
+        <img src="images/img18.jpg" data-index="17" data-status="inactive" class="image">
+    </a>
+    <a href="project-07 - Kopie/project-page-09.html">
+        <img src="images/img56.jpg" data-index="18" data-status="inactive" class="image">
+    </a>
+    <a href="project-07 - Kopie/project-page-09.html">
+        <img src="images/img900.jpg" data-index="19" data-status="inactive" class="image">
+    </a>
+    <a href="project-04/project-page-04.html">
+        <img src="images/img78.jpg" data-index="20" data-status="inactive" class="image">
+    </a>
+    <a href="project-02/project-page-02.html">
+        <img src="images/img2.jpg" data-index="21" data-status="inactive" class="image">
+    </a>
+    <a href="project-04/project-page-04.html">
+        <img src="images/img21.jpg" data-index="22" data-status="inactive" class="image">
+    </a>
+    <a href="project-03/project-page-03.html">
+        <img src="images/img09.jpg" data-index="23" data-status="inactive" class="image">
+    </a>
+    <a href="project-01/project-page-01.html">
+        <img src="images/img90.jpg" data-index="24" data-status="inactive" class="image">
+    </a>
+    <a href="project-08/project-page-09.html">
+        <img src="images/img23.png" data-index="25" data-status="inactive" class="image">
+    </a>
+    <a href="project-04/project-page-04.html">
+        <img src="images/img20.png" data-index="26" data-status="inactive" class="image">
+    </a>
+    <a href="project-02/project-page-02.html">
+        <img src="images/img17.jpg" data-index="27" data-status="inactive" class="image">
+    </a>
+    <a href="project-04/project-page-04.html">
+        <img src="images/img102.jpg" data-index="28" data-status="inactive" class="image">
+    </a>
+    <a href="project-01/project-page-01.html">
+        <img src="images/img103.jpg" data-index="29" data-status="inactive" class="image">
+    </a>
+    <a href="project-02/project-page-02.html">
+        <img src="images/img333.jpg" data-index="30" data-status="inactive" class="image">
+    </a>
+    <a href="project-04/project-page-04.html">
+        <img src="images/img43.jpg" data-index="31" data-status="inactive" class="image">
+    </a>
+    <a href="project-06/project-page-06.html">
+        <img src="images/img567.jpg" data-index="32" data-status="inactive" class="image">
+    </a>
+    <a href="project-04/project-page-04.html">
+        <img src="images/img13.jpg" data-index="33" data-status="inactive" class="image">
+    </a>
+    
+  
 
-	<div class="top"><div class="gulim"><a href="index.html">gulim askar</a></div></div>
+    <div class="top"><div class="gulim"><a href="index.html">gulim askar</a></div></div>
 	<div class="bottom"><div class="what"><a href="https://www.instagram.com/gulim.art/" ><img style="width:130px;" src="what's on.svg" alt=""/></a></div>
-	<div class="about"><a href="about-page/about-page.html" ><img style="width:120px;" src="about.svg" alt=""/></a></div>
+	<div class="about"><a href="https://www.instagram.com/gulim.art/" ><img style="width:120px;" src="about.svg" alt=""/></a></div>
 	<div class="shop"><a href="https://www.instagram.com/gulim.art/" ><img style="width:65px;"  src="shop.svg" alt=""/></a></div>
-        </div>
-<div class="grid-wrapper" >
-	<div >
-		<a href="project-01/project-page-01.html">
-		<img src="images\img14.jpg" alt="" /></a>
-	</div>
-	<div  class="big">
-		<a href="project-01/project-page-01.html">
-		<img src="images\img28.jpg" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-01/project-page-01.html">
-		<img src="images\img.gif" alt="" /></a>
-	</div>
-	
-	<div class="big">
-		<a href="project-05/project-page-05.html">
-		<img src="images\img133.png" alt="" /></a>
-	</div>
-	
-	
-	
-	<div>
-		<a href="project-01/project-page-01.html">
-		<img src="images\img05.gif" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-03/project-page-03.html">
-		<img src="images\img555.jpg" alt="" /></a>
-	</div>
-	
-	<div >
-		<a href="project-04/project-page-04.html">
-		<img src="images\img04.gif" alt="" /></a>
-	</div>
-	
-	<div class="wide">
-		<a href="project-02/project-page-02.html">
-		<img src="images\img345.jpg" alt="" /></a>
-	</div>
-	
-	<div  class="wide">
-		<a href="project-04/project-page-04.html">
-		<img src="images\img0.gif" alt="" /></a>
-	</div>
-		<div >
-			<a href="project-04/project-page-04.html">
-		<img src="images\img67.jpg" alt="" /></a>
-	</div>
-	<div>
-		<a href="project-07/project-page-07.html">
-		<img src="images\img129.jpg" alt="" /></a>
-	</div>
-	<div class="big" >
-		<a href="project-01/project-page-01.html">
-		<img src="images\img5.jpg" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-04/project-page-04.html">
-		<img src="images\img02.gif" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-01/project-page-01.html">
-		<img src="images\img104.jpg" alt="" /></a>
-	</div>
-	<div class="big">
-		<a href="project-05/project-page-05.html">
-		<img src="images\img456.png" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-04/project-page-04.html">
-		<img src="images\img03.gif" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-06/project-page-06.html">
-		<img src="images\img10.png" alt="" /></a>
-	</div>
-    <div class="big">
-		<a href="project-02/project-page-02.html">
-		<img src="images\img18.jpg" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-07 - Kopie/project-page-09.html">
-		<img src="images\img56.jpg" alt="" /></a>
-	</div>
-    <div class="big">
-		<a href="project-07 - Kopie/project-page-09.html">
-		<img src="images\img900.jpg" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-04/project-page-04.html">
-		<img src="images\img78.jpg" alt="" /></a>
-	</div>
-	<div class="big" >
-		<a href="project-02/project-page-02.html">
-		<img src="images\img2.jpg" alt="" /></a>
-	</div>
-    <div >
-		<a href="project-04/project-page-04.html">
-		<img src="images\img21.jpg" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-03/project-page-03.html">
-		<img src="images\img09.jpg" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-01/project-page-01.html">
-		<img src="images\img90.jpg" alt="" /></a>
-	</div>
-    <div >
-		<a href="project-08/project-page-09.html">
-		<img src="images\img23.png" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-04/project-page-04.html">
-		<img src="images\img20.png" alt="" /></a>
-	</div>
-    <div >
-		<a href="project-02/project-page-02.html">
-		<img src="images\img17.jpg" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-04/project-page-04.html">
-		<img src="images\img102.jpg" alt="" /></a>
-	</div>
-	<div class="wide">
-		<a href="project-01/project-page-01.html">
-		<img src="images\img103.jpg" alt="" /></a>
-	</div>
-	<div class="wide">
-		<a href="project-02/project-page-02.html">
-		<img src="images\img333.jpg" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-04/project-page-04.html">
-		<img src="images\img43.jpg" alt="" /></a>
-	</div>
-	<div >
-		<a href="project-06/project-page-06.html">
-		<img src="images\img567.jpg" alt="" /></a>
-	</div>
-	<div class="wide">
-		<a href="project-04/project-page-04.html">
-		<img src="images\img13.jpg" alt="" /></a>
-	</div>
-	
-
-	
-</div>
-
-
-
-
-
+    </div>
 </body>
 </html>
