@@ -1,10 +1,25 @@
-const displayDistance = 100; // distance in px to display another photo
-let nDisplay = 15; // default number of pictures to display at once
+let displayDistance = 200; // Default distance in px to display another photo
+let nDisplay = 15; // Default number of pictures to display at once
 
 // Check if the screen width is 768px or less
 if (window.innerWidth <= 768) {
-    nDisplay = 4; // number of pictures to display at once on mobile
+    nDisplay = 4; // Number of pictures to display at once on mobile
 }
+
+// Function to update displayDistance based on screen size
+function updateDisplayDistance() {
+    if (window.matchMedia("(min-width: 2200px)").matches) {
+        displayDistance = 400;
+    } else {
+        displayDistance = 200;
+    }
+}
+
+// Call the function initially
+updateDisplayDistance();
+
+// Add an event listener for screen resizing
+window.addEventListener('resize', updateDisplayDistance);
 
 const images = document.getElementsByClassName("image");
 
