@@ -1,5 +1,5 @@
 const displayDistance = 100; // distance in px to display another photo
-let nDisplay = 6; // default number of pictures to display at once
+let nDisplay = 15; // default number of pictures to display at once
 
 // Check if the screen width is 768px or less
 if (window.innerWidth <= 768) {
