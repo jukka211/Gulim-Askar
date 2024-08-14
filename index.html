@@ -5,7 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gulim Askar</title>
-    
+     <link id="dynamic-favicon" rel="icon" href="images/favicon-1.svg" type="image/svg+xml" >
+    <script>
+        let faviconFrames = [
+            'images/favicon-1.svg',
+            'images/favicon-2.svg',
+	    'images/favicon-1.svg',
+            'images/favicon-2.svg'
+        ];
+        let currentFrame = 0;
+        
+		function animateFavicon() {
+            const favicon = document.getElementById('dynamic-favicon');
+            // Add a cache-busting query parameter
+            favicon.href = faviconFrames[currentFrame] + '?v=' + new Date().getTime();
+            currentFrame = (currentFrame + 1) % faviconFrames.length;
+            setTimeout(animateFavicon, 500); // Adjust the timeout for animation speed (500ms = 0.5s)
+        }
+        
+        window.onload = animateFavicon;
+    </script>
     <script src="index.js"></script>
     <style>
         @font-face {
