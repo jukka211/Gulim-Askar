@@ -16,6 +16,14 @@ function updateDisplayDistance() {
     }
 }
 
+function updateDisplayDistance() {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        displayDistance = 75;
+    } else {
+        displayDistance = 250;
+    }
+}
+
 // Call the function initially
 updateDisplayDistance();
 
