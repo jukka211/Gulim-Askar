@@ -1,5 +1,5 @@
 const displayDistance = 100; // distance in px to display another photo
-const nDisplay = 2; // number of pictures to display at once
+const nDisplay = 15; // number of pictures to display at once
 
 const images = document.getElementsByClassName("image");
 
