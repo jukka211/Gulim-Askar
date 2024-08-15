@@ -149,6 +149,42 @@ a {
     cursor: url('1-01.png')32 32, auto;
 }
 
+	    .whatson {
+    font-family:Beth-Ellen;
+    font-size: 44px;
+    line-height: 58px;
+   width: 100%;
+    z-index: 9999;
+     background-color:rgb(255, 255, 255);
+     mix-blend-mode: multiply;
+    position: absolute;
+    height: 90%;
+    margin: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+    transform: rotate(2deg);    
+}
+
+.text:hover {
+    transform: rotate(-2deg);  
+}
+.whatson .text {
+  
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: center;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.text a:hover {
+   
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    
+}
+	    
 @media screen and (min-width: 3700px) {
 .image {width: 60vmin;}
 }
@@ -181,6 +217,31 @@ a {
     a {
         cursor: default; /* Disable custom cursor for mobile */
     }
+
+	.whatson {
+       font-size: 28px;
+    line-height:36px;
+   
+     
+}
+
+.text:hover {
+    transform: none;  
+}
+.whatson .text {
+  
+    padding-left: 1%;
+    padding-right: 1%;
+    text-align: center;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.text a:hover {
+   
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    
+}
 }
     </style>
 </head>
