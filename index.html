@@ -246,6 +246,14 @@ a {
     </style>
 </head>
 <body>
+	<div class="whatson">
+        <div class="text">
+            What's on:<br>
+            30.08: <a href="https://www.instagram.com/viennanightmarket/">VNM ist ein int.Event welches für ein neues Erlebnis auf den Märkten steht.</a><br><br>
+            21.09: <a href="https://www.instagram.com/viennanightmarket/">Ein hipper Treffpunkt, wo Food, Design und Lifestyle an 1. Stelle stehen.</a>
+        </div>
+    </div>
+	
     <a href="project-01/project-page-01.html">
         <img src="images/img14.jpg" data-index="0" data-status="inactive" class="image">
     </a>
@@ -388,6 +396,32 @@ a {
             link.dataset.clicked = "false"; // Initialize clicked status
             link.addEventListener('click', handleClick);
         });
+    </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var whatElement = document.querySelector('.what');
+    var whatsonDiv = document.querySelector('.whatson');
+
+    // Toggle display when clicking on the .what div
+    whatElement.addEventListener('click', function(event) {
+        event.preventDefault();
+        toggleWhatson();
+    });
+
+    // Toggle display when clicking on the .whatson div
+    whatsonDiv.addEventListener('click', function() {
+        toggleWhatson();
+    });
+
+    function toggleWhatson() {
+        if (whatsonDiv.style.display === 'flex') {
+            whatsonDiv.style.display = 'none';
+        } else {
+            whatsonDiv.style.display = 'flex';
+        }
+    }
+});
+
     </script>
 </body>
 </html>
