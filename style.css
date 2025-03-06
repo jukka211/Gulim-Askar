@@ -1,0 +1,245 @@
+
+@font-face {
+font-family:Beth-Ellen;
+src: url("testType-03.otf");
+}
+body {
+touch-action: none;
+overflow: hidden;
+}
+.flickity-button {
+display: none;
+}
+/* Alternatively, disable touch actions on specific elements */
+.image, .top, .bottom {
+touch-action: none;
+}
+
+* {
+cursor: url('1-02.png') 32 32, auto;
+}
+body {
+background-color: rgb(255, 255, 255);
+margin: 0;
+padding: 0;
+overflow: hidden;
+min-height: 100vh;
+cursor: url('1-02.png') 32 32, auto;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+.image {
+width: 50vmin;
+position: absolute;
+cursor: url('1-01.png')32 32, auto;
+transform: translate(-50%, -50%) scale(0.5);
+
+
+}
+
+.image[data-status="inactive"] {
+display: none;
+
+}
+
+.image[data-status="active"] {
+display: block;
+
+}
+
+img {
+mix-blend-mode:normal;
+cursor: url('1-01.png')32 32, auto;
+}
+
+
+
+.top, .bottom {
+font-family:Beth-Ellen;
+font-size: 2.2vh;
+position: fixed;
+text-align: center;
+width: 100%;
+z-index: 9999;
+cursor: url('1-01.png')32 32, auto;
+}
+.gulim {
+user-select: none;
+cursor: url('1-01.png')32 32, auto;
+}
+.top {
+top:14px;
+user-select: none;
+}
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    width: 100%;
+   
+    padding-bottom: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    bottom:10px;
+}
+.center {
+    display: flex;
+    gap: 30px; /* Adjust spacing between items as needed */
+    align-items:flex-end;
+}
+.what a,
+.shop a,
+.about a,
+.index a {
+    transform: scale(1.0); /* Ensures smooth scaling */
+   
+   transform-origin: bottom;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.what a:hover,
+.shop a:hover,
+.about a:hover,
+.index a:hover {
+    font-size: 28px;
+
+    transition: font-size 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+
+a {
+user-select: none;
+text-decoration: none;
+color:black;
+cursor: url('1-01.png')32 32, auto;
+}
+
+.whatson {
+font-family:Beth-Ellen;
+font-size: 42px;
+line-height: 54px;
+width: 100%;
+z-index: 9999;
+background-color:rgb(255, 255, 255);
+mix-blend-mode: multiply;
+position: absolute;
+height: 90%;
+margin: 0;
+display: none;
+justify-content: center;
+align-items: center;
+
+   
+}
+
+
+.whatson .text {
+
+padding-left: 15%;
+padding-right: 15%;
+text-align: center;
+transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.text a:hover {
+
+text-decoration: underline;
+text-decoration-style: dotted;
+
+}
+
+@media screen and (min-width: 3700px) {
+.image {width: 48vmin;}
+}
+
+@media screen and (min-width: 2801px) and (max-width: 3699px) {
+.image {width: 52vmin;}
+}
+
+@media screen and (min-width: 2239px) and (max-width: 2800px) {
+.image {width: 52vmin;}
+}
+
+@media (max-width: 768px) {
+
+
+.image {
+width: 45vmin; /* Increase image size for better visibility on mobile */
+transform: translate(-50%, -50%) scale(0.3); /* Adjust scale */
+}
+
+.top, .bottom {
+    font-family:Beth-Ellen;
+    font-size: 16px;
+    line-height: 16px;
+    position: fixed;
+
+    }
+
+.what a,
+.shop a,
+.about a,
+.index a {
+   
+   
+   transform-origin: bottom;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.center {
+    display: flex;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Aligns items vertically */
+    gap: 0px; /* Adds spacing between items */
+    width: 100%; /* Ensures full width */
+    text-align: center; /* Ensures text inside divs is centered */
+}
+
+.bottom {
+    bottom:10px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 3 equal columns */
+    gap: 10px; /* Adjust spacing between grid items */
+    text-align: center; /* Centers text inside each column */
+}
+a {
+cursor: default; /* Disable custom cursor for mobile */
+}
+
+.whatson {
+font-size: 24px;
+line-height:32px;
+
+
+}
+
+.text:hover {
+transform: none;  
+}
+.whatson .text {
+
+padding-left: 1%;
+padding-right: 1%;
+text-align: center;
+transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.text a:hover {
+
+text-decoration: underline;
+text-decoration-style: dotted;
+
+}
+}
