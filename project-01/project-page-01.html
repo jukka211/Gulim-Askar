@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>Gulim Askar</title>
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.min.css">
@@ -28,11 +28,11 @@
 
 	@font-face {
     font-family:Beth-Ellen;
-    src: url("Beth-Ellen-2.0.otf");
+    src: url("testType-03.otf");
   }
   @font-face {
-    font-family:Gambarino;
-    src: url("Gambarino-Regular.otf");
+    font-family:PP-Mono;
+    src: url("PPRightSerifMono-Regular.otf");
   }
 /* external css: flickity.css */
 
@@ -46,8 +46,19 @@ body { font-family: sans-serif;
             justify-content: center;
 			margin: 0;
       cursor: url('1-02.svg') 128 128, auto;
-      
+
+
+
 }
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 
 .gallery {
 	margin-top: 3%;
@@ -81,8 +92,7 @@ img {
 
 .top, .bottom {
     font-family:Beth-Ellen;
-    font-size: 20px;
-    line-height: 20px;
+    font-size: 2.2vh;
     position: fixed;
     text-align: center;
     width: 100%;
@@ -92,14 +102,8 @@ img {
 .top {
     top:14px;
 }
-.bottom {
-    bottom:14px;
-    display: inline-block;
-}
-.about, .what, .shop {
-    display: inline-block;
-    margin-right: 40px;
-}
+
+
 .flickity-page-dots {display: none;}
 .flickity-page-dot {
       display: none;
@@ -109,71 +113,111 @@ img {
     }
 	
 
-.container {
-	display: flex;
-	flex-direction: column;
-	height: 100vh;
 	
-}
-	.text {
-		background-color: rgb(255, 255, 255);
-		font-size: 18px;
-		line-height: 22px;
-		font-family:Gambarino;
-    text-align: justify;
-    text-align-last: center;
-		margin-top: 10%;
-		margin-bottom: 5%;
-		padding-left: 25%;
-		padding-right: 25%;
-		width: 100%;
-		
-	}
 	.gallery-cell {
     display: flex;
     align-items: center; /* Vertically centers the text */
     justify-content: center; /* Horizontally centers the text (optional) */
     
 }
-a {
-    font-family:Gambarino;
-    text-decoration: none;
-    color: black;
-    line-height: 24px;
-  }
-  a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-  }
-.bottom a:hover {
-    text-decoration: none;
- 
-   
-  }
-  .bottom a {
-    font-family:Beth-Ellen;
-  }
-  .what:hover {
- rotate: -7deg;
+.container {
+      display: flex;
+      justify-content: space-between; /* Evenly distributes space between children */
+      align-items: flex-start;
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      font-family:PP-Mono;
+      margin-bottom: 2%;
+      border-top: 0.75px solid black;
+    }
 
-  }
-  .about:hover {
- rotate: 7deg;
-  }
-  .shop:hover {
- rotate: -7deg;
-  }
-  .what, .about, .shop {
-    transition: all 200ms ease-in-out;
-    cursor: pointer;
-  }
-  .top a {
-    font-family:Beth-Ellen;
-  }
-  .top a:hover {
-    text-decoration: none;
-  }
+    /* General styling for each section */
+    .section {
+      width:100%;
+      display: flex;
+      flex-direction: row;
+      display: flex;
+      box-sizing: border-box;
+   
+
+    }
+
+    /* First and second sections: two titles arranged in a row */
+    .title-row {
+      display: flex;
+      flex-direction: column;
+     
+      align-items: left;
+    }
+
+    .title {
+      font-size: 14px;
+
+    }
+
+    /* Third section: two texts displayed in two columns */
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Two equal columns */
+      gap: 5px;
+    }
+
+    .text {
+      font-size: 14px;
+    }
+
+    .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    width: 100%;
+    
+    padding-bottom: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    bottom:10px;
+}
+.center {
+    display: flex;
+    gap: 30px; /* Adjust spacing between items as needed */
+    align-items:flex-end;
+}
+.what a,
+.shop a,
+.about a,
+.index a {
+
+ 
+   transform-origin: bottom;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.what a:hover,
+.shop a:hover,
+.about a:hover,
+.index a:hover {
+    font-size: 28px;
+
+    transition: font-size 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.flickity-button, .flickity-prev-next-button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  width: 1.8vw;
+  height: 1.8vw;
+}
+
+.flickity-button:hover {
+  background-color: rgb(0, 0, 0);
+}
+
 @media screen and (min-width: 100px) and (max-width: 640px) {
   .gallery-cell {
   width: 90%;
@@ -181,20 +225,56 @@ a {
   
 }
 
-.text {
-		background-color: rgb(255, 255, 255);
-		
-		text-align: center;
-		margin-top: 20%;
-		margin-bottom: 15%;
-		padding-left: 12px;
-		padding-right: 12px;
-		width: 100%;
-		
-	}
-  .about, .what, .shop {
-    display: inline-block;
-    margin-right: 15px;
+.flickity-button, .flickity-prev-next-button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  width: 4vh;
+  height: 4vh;
+}
+
+
+.container {
+        flex-direction: column;
+        align-items: stretch;
+        margin-bottom: 15%;
+        padding: 10px;
+      }
+      .section {
+        width: 100%;
+        padding-bottom: 10px;
+        
+      }
+      /* For better readability on mobile, switch to one column */
+      .two-columns {
+        grid-template-columns: 1fr;
+      }
+      .top, .bottom {
+    font-family:Beth-Ellen;
+    font-size: 16px;
+    line-height: 16px;
+    position: fixed;
+
+    }
+
+.what a,
+.shop a,
+.about a,
+.index a {
+   
+   
+   transform-origin: bottom;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.bottom {
+    bottom:10px;
+
+    gap: 10px; /* Adjust spacing between grid items */
+    text-align: center; /* Centers text inside each column */
+
 }
 }
 	
@@ -204,11 +284,14 @@ a {
 
 <body>
  <div class="top"><div class="gulim"><a href="https://gulimaskar.com/">gulim askar</a></div></div>
-	<div class="bottom">
-	<div class="about"><a href="https://gulimaskar.com/" ><img style="width:85px;" src="home.svg" alt=""/></a></div>
-        <div class="what"><a href="https://gulimaskar.com/project-02/project-page-02.html" ><img style="width:130px;" src="next.svg" alt=""/></a></div>
-    </div>
-	<!-- Flickity HTML init -->
+ <div class="bottom">
+  <div class="about"><a href="https://gulimaskar.com/about-page/about-page.html" >about me</a></div>
+  <div class="center">
+   <div class="what"><a href="https://shop.gulimaskar.com" >next project</a></div>
+
+  </div>
+  <div class="index"><a href="https://shop.gulimaskar.com">index</a></div>
+  </div>
 	
 <div class="gallery js-flickity"
 data-flickity-options='{ "wrapAround": true }'>
@@ -235,19 +318,36 @@ data-flickity-options='{ "wrapAround": true }'>
 
 
 </div>
-<div class="text">
-
-	Endless Summer, wine, good food and flowers everywhere!<br>
-
-Everything seems easier and nicer when it's summer! Food outside is tastier. Everything is opening up and there is even wine flowing and flowers blooming. As you know, with such a bountiful setting it is impossible not to praise the small moments of this wonderful life! The Summer will not end and will always remain in our hearts! <br>
-	A series of illustrations inspired by summer moods from life and endless picnics. <br>
-Ink, oil pastel, 2024
-
-
-	
-<br>
-
+<div class="container">
+  <!-- Section 1: two titles in a row -->
+  <div class="section" style="flex:2;">
+  <div class="section" >
+    <div class="title-row">
+      <div class="title">Project name:</div>
+      <div class="title" style=" font-size: 20px;">Endless Summer!</div>
+    </div>
+  </div>
+  <!-- Section 2: two titles in a row -->
+  <div class="section" >
+    <div class="title-row">
+      <div class="title">Year:</div>
+      <div class="title" style=" font-size: 20px;">2024</div>
+    </div>
+  </div>
 </div>
+  <!-- Section 3: two texts in two columns -->
+  <div class="section" style="flex:3;">
+    <div class="two-columns">
+      <div class="text">Endless Summer, wine, good food and flowers everywhere!
+
+        Everything seems easier and nicer when it's summer! Food outside is tastier. Everything is opening up and there is even wine flowing and flowers blooming. 
+        Ink, oil pastel, 2024</div>
+      <div class="text">As you know, with such a bountiful setting it is impossible not to praise the small moments of this wonderful life! The Summer will not end and will always remain in our hearts! <br>
+        A series of illustrations inspired by summer moods from life and endless picnics. </div>
+    </div>
+  </div>
+</div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.2.2/flickity.pkgd.min.js"></script>
 
