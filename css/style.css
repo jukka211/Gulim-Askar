@@ -1,0 +1,230 @@
+::-webkit-scrollbar {
+    width: 3px;  /* Width of the scrollbar */
+}
+
+
+::-webkit-scrollbar-track {
+    background: #ffffff;  /* Color of the track */
+   
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #000000;  /* Color of the scrollbar handle */
+   
+}
+
+
+
+	@font-face {
+    font-family:Beth-Ellen;
+    src: url("testType-03.otf");
+  }
+  @font-face {
+    font-family:PP-Mono;
+    src: url("PPRightSerifMono-Regular.otf");
+  }
+
+  @font-face {
+    font-family:PP-Mono-Bold;
+    src: url("PPRightSerifMono-Dark.otf");
+  }
+/* external css: flickity.css */
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+ 
+body { font-family: sans-serif; 
+	align-items: center;
+            justify-content: center;
+			margin: 0;
+      cursor: url('1-02.svg') 128 128, auto;
+
+
+
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.gallery {
+	margin-top: 10px;
+  background: #ffffff;
+  height: 94vh;
+  margin-bottom: 5%;
+}
+img {
+	object-fit: contain;
+	width: 100%;
+	height: 100%;
+}
+.gallery-cell {
+  width: 50%;
+  height: 100%;
+  margin-right: 10px;
+  background: rgb(255, 255, 255);
+  counter-increment: gallery-cell;
+  object-fit: contain;
+}
+
+/* cell number */
+.gallery-cell:before {
+  display: block;
+  text-align: center;
+
+  line-height: 0px;
+  font-size: 0px;
+  color: white;
+}
+
+
+.top, .bottom {
+    font-family:Beth-Ellen;
+    font-size: 2.2vh;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+	z-index: 999;
+}
+
+.top {
+    top:14px;
+}
+
+
+.flickity-page-dots {display: none;}
+.flickity-page-dot {
+      display: none;
+    }
+    .flickity-page-dot.is-selected {
+		display: none;
+    }
+	
+
+	
+	.gallery-cell {
+    display: flex;
+    align-items: center; /* Vertically centers the text */
+    justify-content: center; /* Horizontally centers the text (optional) */
+    
+}
+.container {
+      display: flex;
+      justify-content: space-between; /* Evenly distributes space between children */
+      align-items: flex-start;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      font-family:PP-Mono;
+      margin-bottom: 2.5%;
+      border-top: 0.75px solid black;
+      position: fixed;
+      bottom: 0;
+
+
+   
+    }
+
+
+    /* General styling for each section */
+    .section {
+      width:100%;
+      display: flex;
+      flex-direction: row;
+      display: flex;
+      box-sizing: border-box;
+      gap: 40px;
+      padding-right: 30px;
+   
+
+    }
+
+    /* First and second sections: two titles arranged in a row */
+    .title-row {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: left;
+    }
+
+    .title {
+      font-size: 14px;
+      text-transform: uppercase;
+
+    }
+
+    .title-2 {
+      font-size: 14px;
+    
+    }
+
+    /* Third section: two texts displayed in two columns */
+    .two-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Two equal columns */
+      gap: 5px;
+    }
+
+    .text {
+      font-size: 14px;
+    }
+
+    .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    width: 100%;
+    
+    padding-bottom: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    bottom:10px;
+}
+.center {
+    display: flex;
+    gap: 30px; /* Adjust spacing between items as needed */
+    align-items:flex-end;
+}
+.what a,
+.shop a,
+.about a,
+.index a {
+
+
+   transform-origin: bottom;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.what a:hover,
+.shop a:hover,
+.about a:hover,
+.index a:hover {
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  color: #000000;
+  text-decoration: none !important;
+}
+.flickity-button, .flickity-prev-next-button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  width: 1.8vw;
+  height: 1.8vw;
+}
+
+.flickity-button:hover {
+  background-color: rgb(0, 0, 0);
+}
+
