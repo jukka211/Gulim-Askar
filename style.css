@@ -62,7 +62,7 @@ display: block;
 }
 
 img {
-mix-blend-mode:normal;
+mix-blend-mode:multiply;
 cursor: url('1-01.png')32 32, auto;
 }
 
