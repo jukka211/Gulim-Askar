@@ -1,5 +1,5 @@
 let displayDistance = 200; // Default distance in px to display another photo
-let nDisplay = 10; // Default number of pictures to display at once
+let nDisplay = 8; // Default number of pictures to display at once
 
 // Check if the screen width is 768px or less
 if (window.innerWidth <= 768) {
@@ -47,7 +47,7 @@ function activatePic(img, x, y) {
     img.style.left = `${x}px`;
     img.style.top = `${y}px`;
     img.style.zIndex = globalIndex; // otherwise the last pic will always be at the top
-    img.style.transform = "translate(-50%, -50%) scale(1.25)"; // Scale up the active image
+    img.style.transform = "translate(-50%, -50%) scale(1.05)"; // Scale up the active image
     lastMousePosition = {x: x, y: y}; // update the last mouse/touch position
 }
 
