@@ -1,230 +1,113 @@
-::-webkit-scrollbar {
-    width: 3px;  /* Width of the scrollbar */
-}
-
-
-::-webkit-scrollbar-track {
-    background: #ffffff;  /* Color of the track */
-   
-}
-
-
-::-webkit-scrollbar-thumb {
-    background: #000000;  /* Color of the scrollbar handle */
-   
-}
-
-
-
-	@font-face {
-    font-family:Beth-Ellen;
+ @font-face {
+    font-family:testType;
     src: url("testType-03.otf");
   }
   @font-face {
     font-family:PP-Mono;
     src: url("PPRightSerifMono-Regular.otf");
   }
-
-  @font-face {
-    font-family:PP-Mono-Bold;
-    src: url("PPRightSerifMono-Dark.otf");
-  }
-/* external css: flickity.css */
-
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
- 
-body { font-family: sans-serif; 
-	align-items: center;
-            justify-content: center;
-			margin: 0;
-      cursor: url('1-02.svg') 128 128, auto;
-
-
-
-}
+   /* Make sure body/html take up full height and have no default spacing */
 html, body {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-.gallery {
-	margin-top: 10px;
-  background: #ffffff;
-  height: 90vh;
-  margin-bottom: 5%;
-}
-img {
-	object-fit: contain;
-	width: 100%;
-	height: 100%;
-}
-.gallery-cell {
-  width: 50%;
   height: 100%;
-  margin-right: 10px;
-  background: rgb(255, 255, 255);
-  counter-increment: gallery-cell;
-  object-fit: contain;
+  margin: 0;
+  padding: 0;
 }
 
-/* cell number */
-.gallery-cell:before {
-  display: block;
-  text-align: center;
-
-  line-height: 0px;
-  font-size: 0px;
-  color: white;
+/* Stack each section in a column (they’re already block-level by default) */
+.section {
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  align-items: center;     /* vertical centering */
+  height: 100vh;           /* each section fills the viewport height */
+  overflow: hidden;        /* hide any overflow if image is too wide */
 }
 
-
-.top, .bottom {
-    font-family:Beth-Ellen;
-    font-size: 2.2vh;
-    position: fixed;
-    text-align: center;
-    width: 100%;
-	z-index: 999;
+/* Force images to span full viewport height while maintaining aspect ratio */
+.section img {
+  height: 100vh;
+  width: auto;
+  display: block; /* removes inline-img whitespace */
 }
+
 
 .top {
-    top:14px;
+  font-family:testType;
+  font-size: 28px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* center .gulim horizontally */
+  align-items: center;     /* center vertically (if you give it a height) */
+  padding: 0rem 0;
+
+  z-index: 1000;
 }
 
+.bottom {
+  font-family:testType;
+  font-size: 28px;
+  position: fixed;
+  bottom: 0;
+  right: 10px;
 
-.flickity-page-dots {display: none;}
-.flickity-page-dot {
-      display: none;
-    }
-    .flickity-page-dot.is-selected {
-		display: none;
-    }
-	
+  display: flex;
+  justify-content: space-between;
+  width: 25%; 
+  z-index: 999;
 
-	
-	.gallery-cell {
-    display: flex;
-    align-items: center; /* Vertically centers the text */
-    justify-content: center; /* Horizontally centers the text (optional) */
-    
+
+}
+
+.top a,
+.bottom a {
+  text-decoration: none;
+  color: #000000;
+
 }
 .container {
-      display: flex;
-      justify-content: space-between; /* Evenly distributes space between children */
-      align-items: flex-start;
-      width: 100%;
-      padding: 10px;
-      box-sizing: border-box;
-      font-family:PP-Mono;
-      margin-bottom: 2.5%;
-      border-top: 0.75px solid black;
-      position: fixed;
-      bottom: 0;
+  font-family:PP-Mono;
+  font-size: 15px;
+  position: fixed;
+  top:10px;
+  right:10px;
+height: 100vh;
+width: 25%;
+display: flex;
+flex-direction: column;
 
-
-   
-    }
-
-
-    /* General styling for each section */
-    .section {
-      width:100%;
-      display: flex;
-      flex-direction: row;
-      display: flex;
-      box-sizing: border-box;
-      gap: 40px;
-      padding-right: 30px;
-   
-
-    }
-
-    /* First and second sections: two titles arranged in a row */
-    .title-row {
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-      align-items: left;
-    }
-
-    .title {
-      font-size: 14px;
-      text-transform: uppercase;
-
-    }
-
-    .title-2 {
-      font-size: 14px;
-    
-    }
-
-    /* Third section: two texts displayed in two columns */
-    .two-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr; /* Two equal columns */
-      gap: 5px;
-    }
-
-    .text {
-      font-size: 14px;
-    }
-
-    .bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items:flex-end;
-    width: 100%;
-    
-    padding-bottom: 10px;
-    box-sizing: border-box; /* Ensures padding doesn't affect width */
-    bottom:10px;
-}
-.center {
-    display: flex;
-    gap: 30px; /* Adjust spacing between items as needed */
-    align-items:flex-end;
-}
-.what a,
-.shop a,
-.about a,
-.index a {
-
-
-   transform-origin: bottom;
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+  gap: 50px;
 }
 
-.what a:hover,
-.shop a:hover,
-.about a:hover,
-.index a:hover {
-  background-color: black;
-  color: white;
-  border-radius: 20px;
+.sec {
+ width: auto;
+ flex:1;
 }
 
-a, a:link, a:visited, a:hover, a:active {
-  color: #000000;
-  text-decoration: none !important;
+ .sec {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
-.flickity-button, .flickity-prev-next-button {
-  background-color: rgb(0, 0, 0);
-  color: white;
-  width: 1.8vw;
-  height: 1.8vw;
-}
-
-.flickity-button:hover {
-  background-color: rgb(0, 0, 0);
+.title {
+  text-transform: uppercase;
 }
 
+.two-columns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.text {
+  flex:1;
+}
+
+.desc {
+  flex:1;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
